@@ -17,4 +17,7 @@ PS C:\Users\jhawker\DEV\webpushPWA> node push
 deploy
 ======
 git init
+(Create new repository on github eg https://github.com/jeff-sun21/pushwebPWA.git)
 git remote add origin https://github.com/jeff-sun21/pushwebPWA.git
+git add .
+git status
