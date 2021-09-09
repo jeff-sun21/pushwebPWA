@@ -14,13 +14,6 @@ this.addEventListener("fetch", (event) => {
         this.registration.showNotification("Offline", {
                     body: "No internet connection.",
     })
-        // if (event.request.url === "https://peaceful-torvalds-59d7d9.netlify.app/") {
-        //     event.waitUntil(
-        //         this.registration.showNotification("Offline", {
-        //             body: "No internet connection.",
-        //         })
-        //     )
-        // }
         event.respondWith(
             caches.match(event.request).then((resp) => {
                 if (resp) {
