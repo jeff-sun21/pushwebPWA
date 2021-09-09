@@ -38,3 +38,9 @@ maskable icon
 =============
 https://www10.lunapic.com/editor/ for tranpsarent background
 Maskable.app Editor
+
+send push notification
+======================
+1. copy Sub details (client side)
+2. add to push.js #16 (server side)
+3. run node push (server side)

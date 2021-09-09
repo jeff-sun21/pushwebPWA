@@ -11,7 +11,7 @@ this.addEventListener("install", (event) => {
 
 this.addEventListener("fetch", (event) => {
     if (!navigator.onLine) {
-        if (event.request.url === "https://peaceful-torvalds-59d7d9.netlify.app/manifest.json") {
+        if (event.request.url === "https://peaceful-torvalds-59d7d9.netlify.app/") {
             event.waitUntil(
                 this.registration.showNotification("Offline", {
                     body: "No internet connection.",
