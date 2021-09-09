@@ -21,3 +21,10 @@ git init
 git remote add origin https://github.com/jeff-sun21/pushwebPWA.git
 git add .
 git status
+git commit -m "initial"
+git push origin master -u
+
+sw
+===
+push event code
+https://developers.google.com/web/ilt/pwa/lab-integrating-web-push

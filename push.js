@@ -12,6 +12,7 @@ let vapidKeys = {
 
 push.setVapidDetails('mailto:j_hawker@sun21.co.uk', vapidKeys.publicKey, vapidKeys.privateKey);
 
+//sub from DB
 let sub = {}
 
 push.sendNotification(sub, 'testing push-web push manager');
