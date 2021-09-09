@@ -1,22 +1,34 @@
-//On install - app shell cached
-self.addEventListener('install', function(event){
+let cacheData = "appV1";
+this.addEventListener("install", (event) => {
     event.waitUntil(
-        caches.open('sw.cache').then(function(cache) {
-            return cache.add('index.html');
+        caches.open(cacheData).then((cache) => {
+            cache.addAll([
+                "/index.html",
+            ])
         })
-    );
+    )
 });
 
-//with request network
-self.addEventListener('fetch', function(event) {
-    event.respondWith(
-        //Try the cache
-        caches.match(event.request).then(function(response) {
-            //return it if there is a response, or else fetch again
-            return response || fetch(event.request);
-        })
-    );
-});
+this.addEventListener("fetch", (event) => {
+    if (!navigator.onLine) {
+        if (event.request.url === "https://peaceful-torvalds-59d7d9.netlify.app/manifest.json") {
+            event.waitUntil(
+                this.registration.showNotification("Offline", {
+                    body: "No internet connection.",
+                })
+            )
+        }
+        event.respondWith(
+            caches.match(event.request).then((resp) => {
+                if (resp) {
+                    return resp;
+                }
+                let requestURL = event.request.clone();
+                fetch(requestURL);
+            })
+        )
+    }
+})
 
 self.addEventListener('push', event => {
     const options = {
