@@ -11,13 +11,19 @@ this.addEventListener("install", (event) => {
 
 this.addEventListener("fetch", (event) => {
     if (!navigator.onLine) {
-        if (event.request.url === "https://peaceful-torvalds-59d7d9.netlify.app/") {
-            event.waitUntil(
-                this.registration.showNotification("Offline", {
-                    body: "No internet connection.",
-                })
-            )
+        // this.registration.showNotification("Offline", {
+        //     body: "No internet connection.",
+        // }
+        event.registration.showNotification("Offline", {
+            body: "No internet connection.",
         }
+        // if (event.request.url === "https://peaceful-torvalds-59d7d9.netlify.app/") {
+        //     event.waitUntil(
+        //         this.registration.showNotification("Offline", {
+        //             body: "No internet connection.",
+        //         })
+        //     )
+        // }
         event.respondWith(
             caches.match(event.request).then((resp) => {
                 if (resp) {
