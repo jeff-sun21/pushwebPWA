@@ -14,8 +14,8 @@ PS C:\Users\jhawker\DEV\webpushPWA> node push
   privateKey: 'B7bihMAQFWc21zkEKL0qFDWpdMIuAd7WgRqZYQ4r3y8'
 }
 
-deploy
-======
+deploy to git
+=============
 git init
 (Create new repository on github eg https://github.com/jeff-sun21/pushwebPWA.git)
 git remote add origin https://github.com/jeff-sun21/pushwebPWA.git
@@ -28,3 +28,7 @@ sw
 ===
 push event code
 https://developers.google.com/web/ilt/pwa/lab-integrating-web-push
+
+publish to netlify
+==================
+https://app.netlify.com/
