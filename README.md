@@ -36,4 +36,5 @@ https://app.netlify.com/
 
 maskable icon
 =============
+https://www10.lunapic.com/editor/ for tranpsarent background
 Maskable.app Editor
