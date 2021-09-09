@@ -11,28 +11,9 @@ this.addEventListener("install", (event) => {
 
 this.addEventListener("fetch", (event) => {
     if (!navigator.onLine) {
-        // this.registration.showNotification("Offline", {
-        //     body: "No internet connection.",
-        // }
-        event.registration.showNotification("Offline", {
-            body: "No internet connection.",
-        }
-        // if (event.request.url === "https://peaceful-torvalds-59d7d9.netlify.app/") {
-        //     event.waitUntil(
-        //         this.registration.showNotification("Offline", {
-        //             body: "No internet connection.",
-        //         })
-        //     )
-        // }
-        event.respondWith(
-            caches.match(event.request).then((resp) => {
-                if (resp) {
-                    return resp;
-                }
-                let requestURL = event.request.clone();
-                fetch(requestURL);
-            })
-        )
+        this.registration.showNotification("Offline", {
+                    body: "No internet connection.",
+        })
     }
 })
 
