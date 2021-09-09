@@ -28,7 +28,12 @@ sw
 ===
 push event code
 https://developers.google.com/web/ilt/pwa/lab-integrating-web-push
+added install and fetch to sw.js
 
 publish to netlify
 ==================
 https://app.netlify.com/
+
+maskable icon
+=============
+Maskable.app Editor
