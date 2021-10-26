@@ -13,8 +13,17 @@ let vapidKeys = {
 push.setVapidDetails('mailto:j_hawker@sun21.co.uk', vapidKeys.publicKey, vapidKeys.privateKey);
 
 //TODO sub from DB
-let sub = 
-{"endpoint":"https://fcm.googleapis.com/fcm/send/cLig_FziIQI:APA91bFipctVHFKG5V6BtMLg3dJIYF-_rrSacjyE_7rXw1sQojhu9RObb3wMvcJCdbIWj5jYyrPmFLIbIJymABewNKO9rFi_CoEI6WZEMMoJ5CCIsrVRsm-pE5O6aKJP0kkYTQqcjIto","expirationTime":null,"keys":{"p256dh":"BKRKPZ-tOleSbQx4fj8-BFpqmnkKRSkDBTdGMXGavbLo-TdSaF2sk6IkDDQgo3jhQoPuPjR4YxfzWlvu9rebPw4","auth":"fNY86PN4hkrdhc4s2yR7NA"}}
+let sub =
+{"endpoint":"https://fcm.googleapis.com/fcm/send/dpf_wigx80k:APA91bGF2Hs2-VzQgYc2NWk1vviIMqNShp_ff288T8UiMvbujTl12iBkvQqbrh2K2kYfOYPGVlISMIkRfRRlYXxmDi_rJHg3pqZt89qoJYQWdl3vDWcMNEoyNh9-1tCqoiUr1lC23--0","expirationTime":null,"keys":{"p256dh":"BDs9PT52FYI5ld-_BKq8FkkQzFH4VBSo1DlKssJpXozwRRife4KQt9vYnGDrZ8_L1yHTE_Obi_dxSjRlMe8aH7c","auth":"8K4EDZn2aLF1ay6CyOYA8A"}}
 ;
-
-push.sendNotification(sub, 'testing push-web push manager');
+try {
+  push.sendNotification(sub, 'testing push-web push manager')
+    .then(status => {
+      console.log(status);
+    })
+    .catch(err => {
+      console.log(err);
+    })
+} catch (error) {
+  console.log("error");
+}

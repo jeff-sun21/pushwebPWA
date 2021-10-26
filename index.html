@@ -31,7 +31,7 @@
             let sw = await navigator.serviceWorker.ready;
             let push = await sw.pushManager.subscribe({
                 userVisibleOnly: true,
-                applicationServerKey: 'BDumdUvVxNY93SsJUMCqJx-XNzXZkH16Pq_TTHpxT4r_pZhmsNH-STLYBTPa1tdmKsK_84rroVaaPwaeQ7REf4c'
+                applicationServerKey: 'BFgzccNJp6rBczI9ammSQhlXyychUq3ckeTx7D1CIiHuZmrMGiK72UD027B4FezqX67XW4mcdjEgp43V8HzknvQ'
             })
             console.log(JSON.stringify(push)) // TODO: Save to DB)
             document.getElementById("sub").textContent = JSON.stringify(push);
