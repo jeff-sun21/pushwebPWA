@@ -1,8 +1,8 @@
 //server push manager
 var push = require('web-push');
 
-let vapidKeys = push.generateVAPIDKeys();
-console.log(vapidKeys);
+// let vapidKeys = push.generateVAPIDKeys();
+// console.log(vapidKeys);
 // run node push to generate keys to console, then add them here
 
 let vapidKeys = {
@@ -14,17 +14,17 @@ push.setVapidDetails('mailto:j_hawker@sun21.co.uk', vapidKeys.publicKey, vapidKe
 
 //TODO sub from DB
 let jeff =
-{"endpoint":"https://fcm.googleapis.com/fcm/send/ekZXo5tfoYA:APA91bE8L9OZLTqq0NtszBmwbqdi3O5abwUI7-m-8Du7lbt-ti0poBcUT36ARVCr8KL68YShAdugxQ92hBvHXnGdGfYfYrqstGu6G9mn_VgFDFWloO-K2cf3JML2LMB0XYmDoZkPQsos","expirationTime":null,"keys":{"p256dh":"BMPtOE50Fgg0AvnUsZhPl_zonGmf5EHxOTUGaRc6mzTzX98rHQeXQphBhgllmUTSW-D_xMOQOb1kqo4uyHAscoc","auth":"beCqh_qJ8nlfC-YLYwJTnw"}}
+{"endpoint":"https://fcm.googleapis.com/fcm/send/ezarEzeVAgI:APA91bEFJB9pun_CP9issrx3BwAVDWvufYGV44SFJ96PQVSWew1IWPpgZOmYj7xxcdfLM1LzwFLSQeH4nyTl1sbPRVSyM0-A7ePmDdZuIAnP_yivm8SObS-gsAr5OAy-7jjTH7xLzLic","expirationTime":null,"keys":{"p256dh":"BIsFXLmeNszJD7vYaLtWBkPiULto9CqTRy1DvxoK3Y3azwTUsL1OIgU6Reqn2Kl4ZKsiwhcC04bVtEkIgN_0SVk","auth":"fqMbcI50SdgrSGnkcoyFZg"}}
 ;
 
 let rafi =
-{"endpoint":"https://fcm.googleapis.com/fcm/send/d-_6Fv2LV-o:APA91bF7GgzHZQLxNqsN_xXF2EXcET_CfeVxeeyLEtQ64Nu1LrpJCeaB1AGYB7PVci7D2VL9PwqFbWuVnPUTb8HOkBIMMy8WpldraS_GYxZ7yKY-zPk2SPr8dE27fjefEu-yvcAOff9T","expirationTime":null,"keys":{"p256dh":"BMl33OAh9EV63UUeCJHhhsBXkhfDLetXoAvGZT1FWdbqF1-xJac27Ae_S9p74aivFUtzYwt12JjSrgGh9hlqUcU","auth":"ddTHiy4uPqXm6XrOG5ih3w"}}
+{"endpoint":"https://fcm.googleapis.com/fcm/send/crn0vU5knxs:APA91bGAr9V4CV0GghKk2ZpQddESbW__STo0rBzH62onFCTpgU7vv4HdGFoM5WhzusG8-B_sExgakiInqvUEzPQPl8VKhiOWKHZ-fvuompLM_bdW2MvrVD-4Ndj_nSCd75MOmHBhIV_Z","expirationTime":null,"keys":{"p256dh":"BCBBEKqBl54YHj1tqJPz_2Kk_UBi_F-9Mnx6yWOvLdOYk5oWPmJo71ornQZDV3wAhtYYRXniBp4vS_hnPI__z0Q","auth":"agARspl1EyplWuhBtQGSGA"}}
   ;
 
 let subscribers = [rafi, jeff];
 try {
-  subscribers.forEach(element => {
-    push.sendNotification(element, 'testing push-web push manager')
+  subscribers.forEach(subscriber => {
+    push.sendNotification(subscriber, 'testing push-web push manager')
     // push.sendNotification(rafi, 'testing push-web push manager')
       .then(status => {
         console.log(status);
