@@ -22,13 +22,13 @@ let jeffSP =
 ;
 
 let rafiPC =
-{"endpoint":"https://fcm.googleapis.com/fcm/send/crn0vU5knxs:APA91bGAr9V4CV0GghKk2ZpQddESbW__STo0rBzH62onFCTpgU7vv4HdGFoM5WhzusG8-B_sExgakiInqvUEzPQPl8VKhiOWKHZ-fvuompLM_bdW2MvrVD-4Ndj_nSCd75MOmHBhIV_Z","expirationTime":null,"keys":{"p256dh":"BCBBEKqBl54YHj1tqJPz_2Kk_UBi_F-9Mnx6yWOvLdOYk5oWPmJo71ornQZDV3wAhtYYRXniBp4vS_hnPI__z0Q","auth":"agARspl1EyplWuhBtQGSGA"}}
-  ;
+{"endpoint":"https://fcm.googleapis.com/fcm/send/cBv7Ed3ryj0:APA91bFdz4PXba5xFaWzqBzcuH4PQkMtn-Y6aDbu1ZAMD5xFUBlxapi4oMmdFuZoPVfogG5G2j8UyHowhYiFNlI9xB0XAoPeRqXMPcfDT0eV-16B1lnTBObbzxNkW10z7sI6S7a-gGNN","expirationTime":null,"keys":{"p256dh":"BNNtz9hvjiSsH2OllOHyas4nn0ozEIqSBVtZcak-aKJcFExTSte-amSRuF8Qsxm_XLD1y2d0j7rVZLyz5oEhU1w","auth":"cTT8mv1kDo2IJNfNbkfctA"}}
+;
 
 let fujitaSP =
 {"endpoint":"https://fcm.googleapis.com/fcm/send/chQ34r_HQpA:APA91bGTr6pVQr-M1FCKYAmMEW3zUJbOevJFab6ibopo4-RisAJEsrMu8leDBzVVgG3vqjDMRwXojQmItfj6GmhcQqo9VTNTrwjx8_EmRB43lJ-SP5myGMIuVg32Bcv4IMdfCUI8wt44","expirationTime":null,"keys":{"p256dh":"BDQzZIc-VS_0Lzmo8bQfHt00zqbHxPXQBlap8xydMhnJMCJyNk4fQOgtqQY_V8gCHk-Tjpaiq-X06FLQgJ63b3w","auth":"anViWSCiKUaI0QcUllIsFA"}}  ;
 
-let subscribers = [jeffPC, jeffSP];
+let subscribers = [jeffPC, jeffSP, rafiPC];
 try {
   subscribers.forEach(subscriber => {
     push.sendNotification(subscriber, 'testing push-web push manager')
