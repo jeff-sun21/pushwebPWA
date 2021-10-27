@@ -33,6 +33,8 @@ added install and fetch to sw.js
 publish to netlify
 ==================
 https://app.netlify.com/
+Mysite https://app.netlify.com/sites/peaceful-torvalds-59d7d9/overview
+App deploy https://peaceful-torvalds-59d7d9.netlify.app/
 
 maskable icon
 =============
