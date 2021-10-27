@@ -18,9 +18,15 @@
     <h2>Sub details</h2>
     <textarea id="sub"></textarea>
     <br>
-    <button onclick="subscribe()">Subscribe</button>
+    <button onclick="subscribe()">Subscribe</button><button onclick="copy()">Copy</button>
 
     <script>
+
+        function copy() {
+        let textarea = document.getElementById("sub");
+        textarea.select();
+        document.execCommand("copy");
+        }
 
         addEventListener('load', async () => {
             let sw = await navigator.serviceWorker.register('./sw.js')
